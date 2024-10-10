@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: futureSQL
+    url: jdbc:postgresql://localhost:5432/pet_projects
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: validate
+        show_sql: true
+        format_sql: true
+
+logging:
+  level:
+    root: info

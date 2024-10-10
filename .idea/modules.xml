@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/NFT_marketplace.iml" filepath="$PROJECT_DIR$/.idea/NFT_marketplace.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/backend.main.iml" filepath="$PROJECT_DIR$/.idea/modules/backend.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/backend.test.iml" filepath="$PROJECT_DIR$/.idea/modules/backend.test.iml" />
     </modules>
   </component>
 </project>
