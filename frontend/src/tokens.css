@@ -1,0 +1,53 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.App {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    text-align: center;
+    color: #787878;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.token-list {
+    list-style: none;
+    padding: 0;
+}
+
+.token-item {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    transition: box-shadow 0.3s;
+}
+
+.token-item:hover {
+    box-shadow: 0 4px 20px #f9f9f9;
+}
+
+.token-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.token-name {
+    font-size: 1.5em;
+    color: #007bff;
+}
+
+.token-price, .token-author, .token-date, .token-availability {
+    color: #a4a4a4;
+    margin: 5px 0;
+}
