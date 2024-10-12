@@ -4,7 +4,7 @@ body {
     padding: 0;
 }
 
-.App {
+.Ishenalys {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -50,4 +50,92 @@ body {
 .token-price, .token-author, .token-date, .token-availability {
     color: #a4a4a4;
     margin: 5px 0;
+}
+
+/*modal window*/
+.create-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.create-button:hover {
+    background-color: #45a049;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-content label {
+    color: #fff;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.modal-content input {
+    display: block;
+    margin: 10px 0;
+    width: calc(100% - 20px); /* Чтобы оставить место для рамки */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #333;
+    color: #fff;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.modal-content button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.modal-content button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.modal-content button[type="button"] {
+    background-color: #f44336;
+    color: white;
+}
+
+.modal-content button[type="button"]:hover {
+    background-color: #e53935;
 }
