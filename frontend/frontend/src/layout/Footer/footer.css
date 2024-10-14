@@ -1,3 +1,8 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
 
 .socialNetworks {
   display: flex;
@@ -20,13 +25,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  .Privacy {
-    display: flex;
-    gap: 30px;
-
-    a {
-      color: white;
-    }
-  }
 }
+.Copyright .Privacy {
+  display: flex;
+  gap: 30px;
+}
+.Copyright .Privacy a {
+  color: white;
+}
+
+/*# sourceMappingURL=footer.css.map */

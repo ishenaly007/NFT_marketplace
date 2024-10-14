@@ -1,4 +1,11 @@
 
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
 .socialNetworks {
   display: flex;
   width: 235px;

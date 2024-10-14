@@ -1,7 +1,6 @@
-import Header from "./header/Header.tsx";
-import Main from "./main/Main.tsx";
-import Footer from "./footer/Footer.tsx"; 
-
+import Header from "./Header/header.tsx";
+import Main from "./main/main.tsx";
+import Footer from "./Footer/footer.tsx";
 
 
 const Layout = () => {

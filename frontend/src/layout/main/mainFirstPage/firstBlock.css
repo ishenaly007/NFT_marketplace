@@ -1,0 +1,105 @@
+.mainBlock {
+  display: flex;
+}
+
+.titleDiscover {
+  width: 500px;
+}
+
+.discoverText {
+  margin: 100px auto;
+}
+.discoverText .learnAbout {
+  display: flex;
+  align-items: center;
+}
+.discoverText .learnAbout button {
+  margin: 0 40px 0 0;
+}
+.discoverText .learnAbout a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+.discoverText .statistic {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.discoverText .stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.discoverText h2 {
+  color: #D6EF0E;
+  font-size: 48px;
+  margin: 0;
+}
+.discoverText span {
+  color: white;
+}
+.discoverText p {
+  margin-top: 10px;
+  color: white;
+  font-size: 18px;
+}
+.discoverText .columnLine {
+  width: 2px;
+  height: 80px;
+  margin: 0 20px;
+  background-color: #D6EF0E;
+}
+
+.artContainer {
+  display: flex;
+  align-items: end;
+}
+.artContainer .digitalArt {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 571px;
+  height: 637px;
+}
+.artContainer .digitalArt img {
+  width: 464px;
+  height: 448px;
+  object-fit: contain;
+}
+.artContainer .reverseTimer {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: space-around;
+  border-radius: 16px;
+  width: 270px;
+  height: 158px;
+  right: 200px;
+  background-color: #131E3A;
+  border: 0 solid #D6EF0E;
+  border-top-width: 1px;
+}
+.artContainer .reverseTimer p {
+  font-weight: bold;
+  margin: 0 auto;
+}
+.artContainer .reverseTimer span {
+  color: #D6EF0E;
+}
+.artContainer .reverseTimer .time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 65px;
+}
+.artContainer .reverseTimer .price {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+}
+
+/*# sourceMappingURL=firstBlock.css.map */
