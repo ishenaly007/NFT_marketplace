@@ -3,12 +3,10 @@ import mainImage from "../../../assets/Rectangle 9.png";
 import { useState, useEffect } from "react";
 
 const FirstBlock = () => {
-    const [second, setSeconds] = useState(5);
-    //ne trogat blyat
+    const [second, setSeconds] = useState(100);
     useEffect(() => {
         const timer = setInterval(() => {
             setSeconds((prev) => {
-
                 if (prev === 0) {
                     clearInterval(timer);
                     return 0;
@@ -55,6 +53,7 @@ const FirstBlock = () => {
                         <div className="stat-item">
                             <h2>65<span>K</span></h2>
                             <p>Artist</p>
+
                         </div>
                         <div className="columnLine"></div>
                         <div className="stat-item">

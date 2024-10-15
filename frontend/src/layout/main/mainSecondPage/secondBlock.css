@@ -1,3 +1,58 @@
-
+.Super-art-week__text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Super-art-week__text button {
+  width: 134px;
+  height: 52px;
+}
+.Super-art-week__card .cards {
+  display: flex;
+  justify-content: space-between;
+}
+.Super-art-week__card .cards .card {
+  width: 370px;
+  height: 524px;
+  background: #131e3a;
+  border-top: 1px solid #d6ef0e;
+  border-radius: 28px;
+}
+.Super-art-week__card .cards .card img {
+  width: 370px;
+  height: 340px;
+  margin-top: 30px;
+  object-fit: contain;
+}
+.Super-art-week__card .cards .timeBuy {
+  display: flex;
+  justify-content: space-around;
+}
+.Super-art-week__card .cards .timeBuy button {
+  width: 168px;
+  height: 48px;
+  background: transparent;
+  border: #d6ef0e 1px solid;
+}
+.Super-art-week__card .cards .timeBuy p {
+  display: flex;
+}
+.Super-art-week__card .cards .timeBuy p img {
+  margin: 0 10px 0 0;
+  width: 24px;
+  height: 24px;
+}
+.Super-art-week__card .cards .nameMoney {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.Super-art-week__card .cards .nameMoney p {
+  display: flex;
+  align-items: center;
+}
+.Super-art-week__card .cards .nameMoney h3 {
+  font-weight: bold;
+}
 
 /*# sourceMappingURL=secondBlock.css.map */
