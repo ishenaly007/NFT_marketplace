@@ -2,9 +2,17 @@ import logo from "../../../../assets/ethereum-classic-(etc).svg";
 import clock from "../../../../assets/clock.svg";
 import "../secondBlock.scss"
 
-const Card = ({ imgSrc, title, ethAmount, timeLeft }) => (
+class CardProps {
+    key?: number
+    title?: string
+    ethAmount?: number
+    timeLeft?: number
+    imgSrc?: string
+}
+
+const Card = ({imgSrc, title, ethAmount, timeLeft}) => (
     <div className="card">
-        <img src={imgSrc} alt={title} />
+        <img src={imgSrc} alt={title}/>
         <div className="nameMoney">
             <h3>{title}</h3>
             <p>
@@ -17,10 +25,11 @@ const Card = ({ imgSrc, title, ethAmount, timeLeft }) => (
             fontWeight: "400",
             fontSize: "14px",
             margin: "-10px",
-            marginLeft: "30px"}}>Ending in</p>
+            marginLeft: "30px"
+        }}>Ending in</p>
         <div className="timeBuy">
             <p>
-                <img src={clock} alt="Clock icon" />
+                <img src={clock} alt="Clock icon"/>
                 {timeLeft}
             </p>
             <button>Place a Bid</button>

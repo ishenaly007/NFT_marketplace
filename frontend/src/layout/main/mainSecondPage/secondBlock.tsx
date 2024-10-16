@@ -37,6 +37,7 @@ const SecondBlock = () => {
                             <span>Amazing</span> and Super<br />
                             Unique Art of This <span>Week</span>
                         </h1>
+                        <button>See All</button>
                     </div>
                     <div className="Super-art-week__card">
                         <div className="cards">
