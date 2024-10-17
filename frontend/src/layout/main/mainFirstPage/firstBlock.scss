@@ -1,0 +1,124 @@
+
+.mainBlock {
+  display: flex;
+
+}
+
+
+.titleDiscover {
+  width: 500px;
+}
+
+.discoverText {
+  margin: 100px auto;
+
+  .learnAbout {
+    display: flex;
+    align-items: center;
+
+    button{
+      margin: 0 40px 0 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+  }
+
+  .statistic {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h2 {
+    color: #D6EF0E;
+    font-size: 48px;
+    margin: 0;
+  }
+
+  span {
+    color: white;
+  }
+
+  p {
+    margin-top: 10px;
+    color: white;
+    font-size: 18px;
+  }
+
+  .columnLine {
+    width: 2px;
+    height: 80px;
+    margin: 0 20px;
+    background-color: #D6EF0E;
+  }
+
+
+}
+
+.artContainer {
+  display: flex;
+  align-items: end;
+
+  .digitalArt {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 571px;
+    height: 637px;
+
+    img {
+      width: 464px;
+      height: 448px;
+      object-fit: contain;
+    }
+  }
+    .reverseTimer {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      justify-content: space-around;
+      border-radius: 16px;
+      width: 270px;
+      height: 158px;
+      right: 200px;
+      background-color: #131E3A;
+      border: 0 solid #D6EF0E;
+      border-top-width: 1px;
+
+
+      p {
+        font-weight: bold;
+        margin: 0 auto;
+      }
+
+      span {
+        color: #D6EF0E;
+      }
+
+      .time {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 65px;
+      }
+
+      .price {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+      }
+    }
+}

@@ -1,10 +1,10 @@
-import {useState} from "react"
+import { useState } from "react"
 import "./header.scss"
 
 
 const pages = ['Marketplace', 'Artists', 'Community', "Collections"];
 
-function header() {
+function Header() {
 
     const [activeLinePage, setActiveLinePage] = useState(pages[0])
 
@@ -30,4 +30,4 @@ function header() {
         </header>
     );
 }
-export default header;
+export default Header;

@@ -7,7 +7,7 @@ import icon4 from "../../assets/socialIcon/Frame3.svg"
 const Footer = () => {
     return (
         <footer className="footer">
-            <div className="container">
+            <div className="container" style={{display: "flex", justifyContent: "space-between", flexDirection: "column"}}>
                 <div className="socialMainIcons">
                     <div className="socialNetworks">
                         <p>Discover NFTs by category, track the latest drop, and and follow the collections you love. Enjoy
@@ -51,9 +51,9 @@ const Footer = () => {
                 </div>
 
                 <div className="Privacy">
-                    <div className="PolicyLine" style={{width: "1200px",height: "1px", backgroundColor: "1E1E1EB8"}}></div>
+                    <div className="PolicyLine" style={{width: "1200px",height: "1px", backgroundColor: "white"}}></div>
                     <div className="Copyright">
-                        <p>© Copyright 2023 - davixq</p>
+                        <p>© Copyright 2023 - Tilek/Ishenaly</p>
                         <div className="Privacy">
                             <a href="">Privacy Policy</a>
                             <a href="">Terms & Conditions</a>

@@ -13,23 +13,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 15px;
+
+  /*align-items: center;*/
 }
 
 body {
-  margin: 0;
-  display: flex;
+  margin: 0 auto;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -42,6 +35,7 @@ h1 {
 }
 
 button {
+  position: relative;
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -50,14 +44,106 @@ button {
   font-family: inherit;
   background-color: #D6EF0E;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, box-shadow 0.25s ease-in-out;
+
+  &:hover {
+    box-shadow: 0px 0px 10px 0px #D6EF0E;
+  }
 }
+
+
+span {
+  color: #D6EF0E;
+
+}
+
 button:hover {
   border-color: #646cff;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+header {
+  width: 100%;
+  display: flex;
+}
+
+.appBar_header {
+  display: flex;
+  position: relative;
+  gap: 10px;
+  align-items: center;
+}
+
+.page_style {
+  color: #FFFFFDB8;
+  cursor: pointer;
+  transition: 0.4s;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.page_style.active {
+  color: white;
+}
+
+.underline {
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #D6EF0E;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+/* Адаптивные стили */
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Изменяем на вертикальную компоновку */
+    align-items: center; /* Центрируем содержимое */
+  }
+
+  .socialNetworks {
+    width: 100%; /* Изменяем ширину на 100% для мобильных */
+  }
+
+  .About {
+    flex-direction: column; /* Изменяем на вертикальную компоновку */
+    gap: 20px; /* Уменьшаем отступы */
+  }
+
+  .Copyright {
+    flex-direction: column; /* Изменяем на вертикальную компоновку */
+    align-items: center; /* Центрируем содержимое */
+  }
+
+  .Privacy {
+    flex-direction: column; /* Изменяем на вертикальную компоновку */
+    gap: 10px; /* Уменьшаем отступы */
+  }
+
+  header {
+    flex-direction: column; /* Изменяем на вертикальную компоновку */
+    align-items: center; /* Центрируем содержимое */
+  }
+
+  .appBar_header {
+    flex-direction: column; /* Изменяем на вертикальную компоновку */
+    align-items: center; /* Центрируем содержимое */
+  }
+
+  button {
+    width: 100%; /* Кнопки занимают 100% ширины на мобильных */
+  }
 }
 
 @media (prefers-color-scheme: light) {
