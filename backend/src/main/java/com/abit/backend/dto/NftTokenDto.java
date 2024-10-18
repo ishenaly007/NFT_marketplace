@@ -14,4 +14,5 @@ public class NftTokenDto {
     String author;
     LocalDateTime createdAt;
     LocalDateTime availableUntil;
+    String imageUrl;
 }

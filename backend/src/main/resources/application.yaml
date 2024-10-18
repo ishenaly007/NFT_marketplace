@@ -12,7 +12,12 @@ spring:
           auto: validate
         show_sql: true
         format_sql: true
-
+  servlet:
+    multipart:
+      max-file-size: 10MB
+app:
+  image:
+    bucket: C:\Users\Ishenaly\IdeaProjects\NFT_marketplace\backend\token_images
 logging:
   level:
     root: info

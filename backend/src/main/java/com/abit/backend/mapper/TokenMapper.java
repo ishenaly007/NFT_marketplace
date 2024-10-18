@@ -13,6 +13,7 @@ public class TokenMapper implements Mapper<NftToken, NftTokenDto> {
                 from.getPrice(),
                 from.getAuthor(),
                 from.getCreatedAt(),
-                from.getAvailableUntil());
+                from.getAvailableUntil(),
+                from.getImageUrl());
     }
 }

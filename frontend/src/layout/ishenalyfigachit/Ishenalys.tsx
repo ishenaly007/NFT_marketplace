@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import "../../tokens.css";
+import "./tokens.css";
 
 interface NftToken {
     id: number;
@@ -8,6 +8,7 @@ interface NftToken {
     author: string;
     createdAt: string;
     availableUntil: string;
+    imageUrl: string;
 }
 
 const Ishenalys: React.FC = () => {
@@ -16,7 +17,7 @@ const Ishenalys: React.FC = () => {
         useState(false);
     const [newToken, setNewToken] =
         useState({name: '', price: '', author: '', availableUntil: ''});
-
+    const [imageFile, setImageFile] = useState<File | null>(null);
 
     useEffect(() => {
         fetch('http://localhost:8080/api/v1/tokens')
@@ -33,20 +34,41 @@ const Ishenalys: React.FC = () => {
         setNewToken({...newToken, [e.target.name]: e.target.value});
     };
 
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files.length > 0) {
+            const file = e.target.files[0];
+            const maxSize = 10 * 1024 * 1024; // 10MB
+
+            if (file.size > maxSize) {
+                alert('Файл слишком большой! Максимальный размер: 10MB');
+                setImageFile(null);
+            } else {
+                setImageFile(file);
+            }
+        }
+    };
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
+        const formData = new FormData();
+        formData.append('name', newToken.name);
+        formData.append('price', newToken.price);
+        formData.append('author', newToken.author);
+        formData.append('availableUntil', newToken.availableUntil);
+        if (imageFile) {
+            formData.append('image', imageFile); // Добавляем файл в запрос
+        }
+
         fetch('http://localhost:8080/api/v1/tokens', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(newToken),
+            body: formData,
         })
             .then((response) => response.json())
             .then((data) => {
                 setTokens([...tokens, data]); // Обновить список токенов
                 setNewToken({name: '', price: '', author: '', availableUntil: ''});
+                setImageFile(null);
                 closeModal();
             })
             .catch((error) => console.error('Ошибка:', error));
@@ -73,8 +95,11 @@ const Ishenalys: React.FC = () => {
                             <input type="text" name="author" placeholder="Author" value={newToken.author}
                                    onChange={handleInputChange} required/>
                             <label>Available until</label>
-                            <input type="datetime-local" pattern={"yyyy-MM-dd'T'HH:mm:ss"} name="availableUntil" value={newToken.availableUntil}
+                            <input type="datetime-local" pattern={"yyyy-MM-dd'T'HH:mm:ss"} name="availableUntil"
+                                   value={newToken.availableUntil}
                                    onChange={handleInputChange} required/>
+                            <label>Upload Image</label>
+                            <input type="file" name="imageFile" accept="image/*" onChange={handleFileChange} required/>
                             <button type="submit">Submit</button>
                             <button type="button" onClick={closeModal}>Cancel</button>
                         </form>
@@ -91,6 +116,11 @@ const Ishenalys: React.FC = () => {
                             <p className="token-author">Author: {token.author}</p>
                             <p className="token-date">Created At: {token.createdAt}</p>
                             <p className="token-availability">Available Until: {token.availableUntil}</p>
+                            {token.imageUrl && (
+                                <img src={`http://localhost:8080/api/v1/tokens/${token.id}/image`} alt={token.name}
+                                     className="token-image"/>
+
+                            )}
                         </div>
                     </li>
                 ))}

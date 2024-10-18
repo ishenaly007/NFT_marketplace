@@ -139,3 +139,10 @@ body {
 .modal-content button[type="button"]:hover {
     background-color: #e53935;
 }
+
+.token-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 8px;
+}

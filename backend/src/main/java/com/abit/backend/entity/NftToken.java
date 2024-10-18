@@ -20,4 +20,5 @@ public class NftToken {
     private String author;
     private LocalDateTime createdAt;
     private LocalDateTime availableUntil;
+    private String imageUrl;
 }

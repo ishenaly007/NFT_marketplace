@@ -1,8 +1,10 @@
 package com.abit.backend.dto;
 
 import jakarta.validation.constraints.NotNull;
+import lombok.NoArgsConstructor;
 import lombok.Value;
 import lombok.experimental.FieldNameConstants;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDateTime;
 
@@ -15,4 +17,5 @@ public class NftTokenCreateDto {
     String author;
     LocalDateTime createdAt;
     LocalDateTime availableUntil;
+    MultipartFile image;
 }
