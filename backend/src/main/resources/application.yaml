@@ -18,8 +18,9 @@ spring:
   mail:
     host: smtp.gmail.com         # SMTP-сервер
     port: 587                      # Порт (обычно 587 для TLS)
-    username: ishennarkozuev07@gmail.com
-    password: figh treq nffd zobt
+
+    username: ${EMAIL_USERNAME}
+    password: ${EMAIL_PASSWORD}
     properties:
       mail.smtp.auth: true
       mail.smtp.starttls.enable: true
