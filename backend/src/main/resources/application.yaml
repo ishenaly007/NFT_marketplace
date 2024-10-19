@@ -15,6 +15,14 @@ spring:
   servlet:
     multipart:
       max-file-size: 10MB
+  mail:
+    host: smtp.gmail.com         # SMTP-сервер
+    port: 587                      # Порт (обычно 587 для TLS)
+    username: ishennarkozuev07@gmail.com
+    password: figh treq nffd zobt
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
 app:
   image:
     bucket: C:\Users\Ishenaly\IdeaProjects\NFT_marketplace\backend\token_images

@@ -2,6 +2,8 @@ package com.abit.backend.http.controller;
 
 import com.abit.backend.dto.NftTokenCreateDto;
 import com.abit.backend.dto.NftTokenDto;
+import com.abit.backend.entity.EmailRequest;
+import com.abit.backend.service.EmailService;
 import com.abit.backend.service.TokenService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
@@ -24,6 +26,7 @@ import static org.springframework.http.ResponseEntity.notFound;
 @CrossOrigin(origins = "http://localhost:5173")
 public class TokenRestController {
     private final TokenService service;
+    private final EmailService emailService;
 
     //    @PreAuthorize("permitAll()")
 //    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
