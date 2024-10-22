@@ -9,7 +9,7 @@ spring:
     properties:
       hibernate:
         hbm2ddl:
-          auto: validate
+          auto: update
         show_sql: true
         format_sql: true
   servlet:
