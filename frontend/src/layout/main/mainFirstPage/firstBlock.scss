@@ -77,6 +77,7 @@
     height: 637px;
 
     img {
+      border-radius: 100px;
       width: 464px;
       height: 448px;
       object-fit: contain;
@@ -85,12 +86,12 @@
     .reverseTimer {
       display: flex;
       flex-wrap: wrap;
-      position: relative;
+      position: absolute;
       justify-content: space-around;
       border-radius: 16px;
       width: 270px;
       height: 158px;
-      right: 200px;
+      right: 20%;
       background-color: #131E3A;
       border: 0 solid #D6EF0E;
       border-top-width: 1px;

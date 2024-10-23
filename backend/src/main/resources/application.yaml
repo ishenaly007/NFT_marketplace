@@ -9,7 +9,7 @@ spring:
     properties:
       hibernate:
         hbm2ddl:
-          auto: validate
+          auto: update
         show_sql: true
         format_sql: true
   servlet:
@@ -26,7 +26,7 @@ spring:
       mail.smtp.starttls.enable: true
 app:
   image:
-    bucket: C:\Users\Ishenaly\IdeaProjects\NFT_marketplace\backend\token_images
+    bucket: C:\MyProjects\NFT_marketplace\backend\token_images
 logging:
   level:
     root: info
