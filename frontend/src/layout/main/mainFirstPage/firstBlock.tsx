@@ -27,7 +27,6 @@ const FirstBlock = () => {
                 });
                 setRemainingTimes(times);
 
-                // Запускаем анимацию счетчиков после загрузки данных
                 animateCounters();
             } catch (error) {
                 console.error('Error fetching data:', error);

@@ -5,21 +5,25 @@ import "../secondBlock.scss";
 class CardProps {
     key?: number;
     title?: string;
-    ethAmount?: number;
-    timeLeft?: number;
+    ethAmount?: number | string;
+    timeLeft?: number | string;
     imgSrc?: string;
 }
 
-const formatTime = (seconds: number) => {
+const formatTime = (seconds: number | undefined) => {
     const secondString = String(seconds % 60).padStart(2, "0");
     const minuteString = String(Math.floor((seconds / 60) % 60)).padStart(2, "0");
     const hoursString = String(Math.floor(seconds / 3600)).padStart(2, "0");
     return `${hoursString}:${minuteString}:${secondString}`;
 };
 
-const Card = ({ imgSrc, title, ethAmount, timeLeft }: CardProps) => (
+const Card = ({ imgSrc, title, ethAmount, timeLeft = 0 }: CardProps) => (
     <div className="card">
-        <img src={imgSrc} alt={title} />
+        <img src={imgSrc} alt={title} style={{
+            width: '360px',
+            height: '244px',
+            objectFit: "contain"
+        }}/>
         <div className="nameMoney">
             <h3>{title}</h3>
             <p>
@@ -33,11 +37,12 @@ const Card = ({ imgSrc, title, ethAmount, timeLeft }: CardProps) => (
         <div className="timeBuy">
             <p>
                 <img src={clock} alt="Clock icon" />
-                {formatTime(timeLeft || 0)}
+                {timeLeft}
             </p>
             <button>Place a Bid</button>
         </div>
     </div>
 );
+
 
 export default Card;

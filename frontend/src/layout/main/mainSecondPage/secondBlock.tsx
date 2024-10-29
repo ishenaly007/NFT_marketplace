@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import Card from "./cards/cards.tsx";
 
 const SecondBlock = () => {
-    const [seconds, setSeconds] = useState(100);
     const [cardData, setCardData] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showModal, setShowModal] = useState(false); // Modal state
@@ -17,12 +16,23 @@ const SecondBlock = () => {
 
     useEffect(() => {
         const timer = setInterval(() => {
-            setSeconds((prev) => (prev === 0 ? 0 : prev - 1));
+            setCardData((prevData) =>
+                prevData.map((token) => ({
+                    ...token,
+                    timeLeft: Math.max(token.timeLeft - 1, 0),
+                }))
+            );
         }, 1000);
         return () => clearInterval(timer);
     }, []);
 
-    const formattedTime = `${String(Math.floor(seconds / 3600)).padStart(2, "0")}:${String(Math.floor((seconds / 60) % 60)).padStart(2, "0")}:${String(seconds % 60).padStart(2, "0")}`;
+    const formatTime = (seconds: number) => {
+        const secondString = String(Math.floor(seconds % 60)).padStart(2, "0");
+        const minuteString = String(Math.floor((seconds / 60) % 60)).padStart(2, "0");
+        const hoursString = String(Math.floor(seconds / 3600)).padStart(2, "0");
+        return `${hoursString}:${minuteString}:${secondString}`;
+    };
+
 
     useEffect(() => {
         const autoSlide = setInterval(() => {
@@ -36,13 +46,22 @@ const SecondBlock = () => {
             try {
                 const response = await fetch("http://localhost:8080/api/v1/tokens");
                 const result = await response.json();
-                setCardData(result);
+
+                const updatedData = result.map((token: any) => {
+                    const availableUntil = new Date(token.availableUntil).getTime();
+                    const currentTime = new Date().getTime();
+                    const timeLeft = Math.max(Math.floor((availableUntil - currentTime) / 1000), 0); // в секундах
+                    return { ...token, timeLeft };
+                });
+
+                setCardData(updatedData);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         };
         fetchData();
     }, []);
+
 
     const handlePrevClick = () => {
         setCurrentIndex((prevIndex) => (prevIndex === 0 ? cardData.length - 1 : prevIndex - 1));
@@ -63,18 +82,23 @@ const SecondBlock = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle form submission, send data to the server
         const formData = new FormData();
         Object.entries(newToken).forEach(([key, value]) => {
-            formData.append(key, value);
+            if (key === "imageFile" && value) {
+                formData.append("image", value);  // Correctly append the image file
+            } else {
+                formData.append(key, value);
+            }
         });
         try {
-            await fetch("http://localhost:8080/api/v1/tokens", {
+            const response = await fetch("http://localhost:8080/api/v1/tokens", {
                 method: "POST",
                 body: formData,
             });
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
             setShowModal(false);
-            // Optionally, refresh card data
         } catch (error) {
             console.error("Error submitting token:", error);
         }
@@ -95,14 +119,14 @@ const SecondBlock = () => {
                     <div className="Super-art-week__card">
                         <div className="cards-wrapper">
                             <div className="cards"
-                                 style={{transform: `translateX(-${Math.min(currentIndex * (370 + 20), 1170)}px)`}}>
+                                 style={{transform: `translateX(-${Math.min(currentIndex * (370 + 20), 1970)}px)`}}>
                                 {cardData.map((data, index) => (
                                     <Card
                                         key={index}
                                         imgSrc={`http://localhost:8080/api/v1/tokens/${data.id}/image`}
                                         title={data.name}
                                         ethAmount={data.price}
-                                        timeLeft={formattedTime}
+                                        timeLeft={formatTime(data.timeLeft)}
                                     />
                                 ))}
                             </div>
